@@ -13,19 +13,19 @@ module.exports = function(grunt) {
       }
     },
 
-    //jscs: {
-    //  src: 'lib/**/*.js',
-    //  options: {
-    //    config: '.jscsrc'
-    //  }
-    //},
+    jscs: {
+      src: ['routes/*.js', 'server.js'],
+      options: {
+        config: '.jscsrc'
+      }
+    },
 
     simplemocha: {
       src: ['test/*.js']
     }
   });
 
-  grunt.registerTask('test', ['jshint', 'simplemocha']);
+  grunt.registerTask('test', ['jshint', 'simplemocha', 'jscs']);
 
   grunt.registerTask('default', ['test']);
 };
