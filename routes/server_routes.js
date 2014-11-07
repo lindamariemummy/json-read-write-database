@@ -17,7 +17,6 @@ module.exports = function(app) {
     fs.readFile('./files/' + req.params.someName + '.json', function(err, data) {
       if (err) console.log('problem accessing ' + './files/' + req.params.someName + '.json');
       else {
-        //console.log(JSON.parse(data));
         res.json(JSON.parse(data));
       }
     });
